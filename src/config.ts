@@ -30,9 +30,9 @@ function loadEnvLocal(): Record<string, string> {
   }
 }
 
-export function getApiKey(): string | undefined {
+export function getApiKey(): string {
   const envLocal = loadEnvLocal();
-  return envLocal.FREE_TIER_GEMINI_API_KEY || process.env.FREE_TIER_GEMINI_API_KEY;
+  return envLocal.GEMINI_API_KEY || process.env.GEMINI_API_KEY || '';
 }
 
 export function getModel(): string {
