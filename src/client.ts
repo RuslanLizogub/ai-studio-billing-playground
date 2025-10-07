@@ -8,7 +8,7 @@ export function getModelName(): string {
 export function createClient(): GoogleGenerativeAI {
   const apiKey = getApiKey();
   if (!apiKey) {
-    throw new Error('GEMINI_API_KEY is required');
+    throw new Error('FREE_TIER_GEMINI_API_KEY is required');
   }
   return new GoogleGenerativeAI(apiKey);
 }

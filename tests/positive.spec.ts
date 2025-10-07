@@ -4,7 +4,7 @@ import { createClient, getModelName, hasApiKey } from '../src/client.js';
 describe('Positive Test', () => {
   it('should generate non-empty text', async () => {
     if (!hasApiKey()) {
-      console.warn('GEMINI_API_KEY not set, skipping');
+      console.warn('FREE_TIER_GEMINI_API_KEY not set, skipping');
       return;
     }
 

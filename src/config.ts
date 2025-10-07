@@ -32,7 +32,7 @@ function loadEnvLocal(): Record<string, string> {
 
 export function getApiKey(): string | undefined {
   const envLocal = loadEnvLocal();
-  return envLocal.GEMINI_API_KEY || process.env.GEMINI_API_KEY;
+  return envLocal.FREE_TIER_GEMINI_API_KEY || process.env.FREE_TIER_GEMINI_API_KEY;
 }
 
 export function getModel(): string {

@@ -31,7 +31,7 @@ describe('File Upload Test', () => {
 
   it('should upload file and generate response', async () => {
     if (!hasApiKey()) {
-      console.warn('GEMINI_API_KEY not set, skipping');
+      console.warn('FREE_TIER_GEMINI_API_KEY not set, skipping');
       return;
     }
 

@@ -14,7 +14,7 @@ Minimal TypeScript project to test Google AI Studio billing with Gemini API.
    Create `.env.local` file and add your API key:
    ```bash
    cat > .env.local << EOF
-GEMINI_API_KEY=your_actual_key_here
+FREE_TIER_GEMINI_API_KEY=your_actual_key_here
 MODEL=gemini-2.0-flash-001
 EOF
    ```
@@ -30,9 +30,9 @@ EOF
 
 ## GitHub Actions
 
-Set `GEMINI_API_KEY` in repository secrets:
+Set `FREE_TIER_GEMINI_API_KEY` in repository secrets:
 - Go to Settings → Secrets and variables → Actions
-- Add secret: `GEMINI_API_KEY`
+- Add secret: `FREE_TIER_GEMINI_API_KEY`
 
 Workflow runs automatically on every push.
 
