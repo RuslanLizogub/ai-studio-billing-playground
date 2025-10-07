@@ -19,6 +19,8 @@ MODEL=gemini-2.0-flash-001
 EOF
    ```
    
+   **Note**: Model `gemini-2.0-flash-001` has rate limit: 15 requests/minute (Free Tier)
+   
    Replace `your_actual_key_here` with your real API key.
    
    Get API key: https://aistudio.google.com/app/apikey
