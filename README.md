@@ -40,8 +40,11 @@ Workflow runs automatically on every push.
 
 - **positive.spec.ts** - Simple text generation test
 - **file.spec.ts** - File upload and processing test
+- **load.spec.ts** - Multiple prompts and longer text generation
+- **conversation.spec.ts** - Multi-turn conversation and structured data
+- **batch.spec.ts** - Parallel generation and different temperatures
 
-Both tests use minimal prompts to keep token costs low.
+All tests use minimal prompts but create sufficient load to test API billing.
 
 ## Files
 
