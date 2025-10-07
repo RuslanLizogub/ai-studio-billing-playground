@@ -1,0 +1,28 @@
+{
+  "name": "ai-studio-billing-playground",
+  "version": "1.0.0",
+  "description": "Test Google AI Studio billing with minimal, deterministic setup",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "keywords": [
+    "gemini",
+    "google-ai",
+    "billing",
+    "testing"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
