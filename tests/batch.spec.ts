@@ -8,15 +8,17 @@ describe('Batch Generation Test', () => {
       return;
     }
 
+    // Wait before test to avoid rate limit from previous tests
+    await new Promise(resolve => setTimeout(resolve, 10000));
+
     const ai = createClient();
     const model = ai.getGenerativeModel({ model: getModelName() });
 
+    // Reduce to 3 parallel requests instead of 5
     const prompts = [
       'Say "Test 1"',
       'Say "Test 2"',
       'Say "Test 3"',
-      'Say "Test 4"',
-      'Say "Test 5"',
     ];
 
     const promises = prompts.map(prompt => 
@@ -38,6 +40,9 @@ describe('Batch Generation Test', () => {
       return;
     }
 
+    // Wait before next test to avoid rate limit
+    await new Promise(resolve => setTimeout(resolve, 15000));
+
     const ai = createClient();
     
     const temperatures = [0.1, 0.5, 0.9];
@@ -54,8 +59,8 @@ describe('Batch Generation Test', () => {
       expect(text).toBeTruthy();
       expect(text.length).toBeGreaterThan(0);
       
-      // Delay to avoid rate limits
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Delay to manage rate limits: 15 req/min = 1 req per 4 seconds
+      await new Promise(resolve => setTimeout(resolve, 4500));
     }
   });
 });

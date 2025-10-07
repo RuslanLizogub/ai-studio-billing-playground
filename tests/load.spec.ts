@@ -25,8 +25,8 @@ describe('Multiple Prompts Test', () => {
       expect(text).toBeTruthy();
       expect(text.length).toBeGreaterThan(0);
       
-      // Small delay to avoid rate limits
-      await new Promise(resolve => setTimeout(resolve, 500));
+      // Delay to manage rate limits: 15 req/min = 1 req per 4 seconds
+      await new Promise(resolve => setTimeout(resolve, 4500));
     }
   });
 
@@ -35,6 +35,9 @@ describe('Multiple Prompts Test', () => {
       console.warn('FREE_TIER_GEMINI_API_KEY not set, skipping');
       return;
     }
+
+    // Wait before next test to avoid rate limit
+    await new Promise(resolve => setTimeout(resolve, 5000));
 
     const ai = createClient();
     const model = ai.getGenerativeModel({ model: getModelName() });

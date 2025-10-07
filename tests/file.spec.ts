@@ -35,6 +35,9 @@ describe('File Upload Test', () => {
       return;
     }
 
+    // Wait before test to avoid rate limit
+    await new Promise(resolve => setTimeout(resolve, 5000));
+
     const uploadResult = await fileManager.uploadFile(testFilePath, {
       mimeType: 'text/plain',
       displayName: 'Test',
@@ -43,7 +46,8 @@ describe('File Upload Test', () => {
     expect(uploadResult.file.uri).toBeTruthy();
     uploadedFileName = uploadResult.file.name;
 
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // Wait longer after upload before generating
+    await new Promise(resolve => setTimeout(resolve, 3000));
 
     const ai = createClient();
     const model = ai.getGenerativeModel({ model: getModelName() });
